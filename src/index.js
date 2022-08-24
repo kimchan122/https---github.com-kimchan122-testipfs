@@ -15,7 +15,7 @@ Coded by www.creative-tim.com
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import App from "App";
 import { Web3ReactProvider } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
@@ -30,7 +30,7 @@ import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 const getLibrary = (provider) => new Web3Provider(provider);
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <MaterialUIControllerProvider>
       <Web3ReactProvider getLibrary={getLibrary}>
         <MetamaskProvider>
@@ -38,6 +38,6 @@ ReactDOM.render(
         </MetamaskProvider>
       </Web3ReactProvider>
     </MaterialUIControllerProvider>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );

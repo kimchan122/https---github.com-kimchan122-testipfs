@@ -9,6 +9,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import RangeSlider from 'react-bootstrap-range-slider';
+import contract from '../../../contracts/RegisterAds.json';
+import { ethers } from "ethers";
+import { TravelExplore } from "@mui/icons-material";
+
 //import Form from 'react-bootstrap/Form';
 /* eslint-disable react/prop-types */
 export default function VideoFromControl() {
@@ -25,6 +29,30 @@ export default function VideoFromControl() {
     const [ value3, setValue3 ] = useState(0);
     const [ value4, setValue4 ] = useState(0);
     const [ value5, setValue5 ] = useState(0);
+
+    const [ res, setRes ] = useState("");
+
+    const contractAddress = "0x5293cbd6fe9A2981355eEe561c01fe513620f14A";
+    const abi = contract.abi;
+
+    
+    const RegisterAds = async(url) => {
+        const { ethereum } = window;
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(contractAddress, abi, signer);
+            
+        let tx = await contract.registerAds(
+            url,
+            title,
+            value0,
+            value1,
+            value2,
+            value3,
+            value4,
+            value5,
+        );    
+    }
     //const [object, setObject] = useState({});
     // console.log("video")    
 
@@ -43,8 +71,9 @@ export default function VideoFromControl() {
     //     //console.log(value+">>>");
     //     //console.log(category);
     // }
+    //let res;
 
-    function AdSubmit() {
+    async function AdSubmit() {
         console.log("submit");
         let data = new Object();
         //data.name = "unchainad";
@@ -59,10 +88,15 @@ export default function VideoFromControl() {
         console.log("GO To IPFS");
         console.log(video);
         console.log(data);
-        let res = VideoToIPFS(video, data);
+        let res = await VideoToIPFS(video, data);
+        setRes(res);
+        console.log(res);
         if (res) {
+            //console.log(res);
+            RegisterAds(res);
             console.log("Object Success!");
         } else {
+            //console.log(res);
             console.log("Object Failed!");
         }
     }
@@ -98,22 +132,6 @@ export default function VideoFromControl() {
                             <Form.Control value={value0} />
                         </Col>
                         <Col>
-                            <Form.Label>Education</Form.Label>
-                            <RangeSlider
-                                value={value1}
-                                onChange={e => setValue1(e.target.value, 1)}
-                            />
-                            <Form.Control value={value1} />
-                        </Col>
-                        <Col>
-                            <Form.Label>Exercise</Form.Label>
-                            <RangeSlider
-                                value={value2}
-                                onChange={e => setValue2(e.target.value, 2)}
-                            />
-                            <Form.Control value={value2} />
-                        </Col>
-                        <Col>
                             <Form.Label>Food</Form.Label>
                             <RangeSlider
                                 value={value3}
@@ -136,6 +154,22 @@ export default function VideoFromControl() {
                                 onChange={e => setValue5(e.target.value, 5)}
                             />
                             <Form.Control value={value5} />
+                        </Col>
+                        <Col>
+                            <Form.Label>Education</Form.Label>
+                            <RangeSlider
+                                value={value1}
+                                onChange={e => setValue1(e.target.value, 1)}
+                            />
+                            <Form.Control value={value1} />
+                        </Col>
+                        <Col>
+                            <Form.Label>Exercise</Form.Label>
+                            <RangeSlider
+                                value={value2}
+                                onChange={e => setValue2(e.target.value, 2)}
+                            />
+                            <Form.Control value={value2} />
                         </Col>
                     </Row>
                 </Form.Group>

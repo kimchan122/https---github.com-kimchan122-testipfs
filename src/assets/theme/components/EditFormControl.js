@@ -81,28 +81,6 @@ export default function EditFromControl() {
                         </MDBBtnGroup>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Education</Form.Label>
-                        <MDBBtnGroup style={{ display: "block", marginBottom: "30px" }}>
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch0' wrapperTag='span' label='hackathonr' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch1' wrapperClass='mx-2' wrapperTag='span' label='tutoring' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch2' wrapperTag='span' label='friends' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch3' wrapperClass='mx-2' wrapperTag='span' label='boot camp' onClick={(e) => CategorySetting([10,2,3,4,5,6])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch4' wrapperTag='span' label='language' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch5' wrapperClass='mx-2' wrapperTag='span' label='pen pal' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
-                        </MDBBtnGroup>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Exercise</Form.Label>
-                        <MDBBtnGroup style={{ display: "block", marginBottom: "30px" }}>
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch0' wrapperTag='span' label='soccer' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch1' wrapperClass='mx-2' wrapperTag='span' label='Serie A' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch2' wrapperTag='span' label='Heung Min-son' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch3' wrapperClass='mx-2' wrapperTag='span' label='MBA' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch4' wrapperTag='span' label='climbing' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
-                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch5' wrapperClass='mx-2' wrapperTag='span' label='racing' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
-                        </MDBBtnGroup>
-                    </Form.Group>
-                    <Form.Group>
                         <Form.Label>Food</Form.Label>
                         <MDBBtnGroup style={{ display: "block", marginBottom: "30px" }}>
                             <MDBCheckbox btn btnColor='secondary' name='options' id='food-ch0' wrapperTag='span' label='bread' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
@@ -133,6 +111,28 @@ export default function EditFromControl() {
                             <MDBCheckbox btn btnColor='secondary' name='options' id='medical-ch3' wrapperClass='mx-2' wrapperTag='span' label='vegan' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
                             <MDBCheckbox btn btnColor='secondary' name='options' id='medical-ch4' wrapperTag='span' label='fastfood' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
                             <MDBCheckbox btn btnColor='secondary' name='options' id='medical-ch5' wrapperClass='mx-2' wrapperTag='span' label='turtle neck' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
+                        </MDBBtnGroup>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Education</Form.Label>
+                        <MDBBtnGroup style={{ display: "block", marginBottom: "30px" }}>
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch0' wrapperTag='span' label='hackathonr' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch1' wrapperClass='mx-2' wrapperTag='span' label='tutoring' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch2' wrapperTag='span' label='friends' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch3' wrapperClass='mx-2' wrapperTag='span' label='boot camp' onClick={(e) => CategorySetting([10,2,3,4,5,6])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch4' wrapperTag='span' label='language' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='education-ch5' wrapperClass='mx-2' wrapperTag='span' label='pen pal' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
+                        </MDBBtnGroup>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Exercise</Form.Label>
+                        <MDBBtnGroup style={{ display: "block", marginBottom: "30px" }}>
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch0' wrapperTag='span' label='soccer' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch1' wrapperClass='mx-2' wrapperTag='span' label='Serie A' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch2' wrapperTag='span' label='Heung Min-son' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch3' wrapperClass='mx-2' wrapperTag='span' label='MBA' onClick={(e) => CategorySetting([1,2,3,4,5,6])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch4' wrapperTag='span' label='climbing' onClick={(e) => CategorySetting([2,4,6,5,3,1])} />
+                            <MDBCheckbox btn btnColor='secondary' name='options' id='exercise-ch5' wrapperClass='mx-2' wrapperTag='span' label='racing' onClick={(e) => CategorySetting([10,0,5,0,3,0])} />
                         </MDBBtnGroup>
                     </Form.Group>
                 </Form.Group>

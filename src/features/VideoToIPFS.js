@@ -28,7 +28,7 @@ const VideoToIPFS = async (video, obj) => {
             //setIhash(res.data.IpfsHash);
             const RealHash = res.data.IpfsHash;
             //setLogoHash(RealHash);
-            const VideoHash = `${res.data.IpfsHash}`;
+            const VideoHash = `https://api.pinata.cloud/data+${res.data.IpfsHash}`;
             //console.log(ImgHash);
 
             //console.log(res);
@@ -42,7 +42,8 @@ const VideoToIPFS = async (video, obj) => {
             //console.log(ObjectData);
             //obj.video = RealHash;
 
-            return ObjectToIPFS(RealHash, obj);
+            ObjectToIPFS(RealHash, obj);
+            return VideoHash;
             //return true;
 
         } catch (error) {
